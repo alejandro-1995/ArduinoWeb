@@ -1,0 +1,60 @@
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Prueba de Arduino</title>
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/slate.css' %}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/master.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center mt-2">
+                <h1>Enciende un led via Web</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-center">
+                <form method="POST">{% csrf_token %}
+                    <input type="hidden" value="1" name="id">
+                    <button class="btn btn-danger mb-2 w-100">Led rojo</button> <br>
+                </form>
+                <form method="POST">{% csrf_token %}
+                    <input type="hidden" value="2" name="id">
+                    <button class="btn btn-info mb-2 w-100">Led azul</button> <br>
+                </form>
+            </div>
+            <div class="col-6 text-center">
+                <form method="POST">{% csrf_token %}
+                    <input type="hidden" value="3" name="id">
+                    <button class="btn btn-success mb-2 w-100">Led verde</button> <br>
+                </form>
+                <form method="POST">{% csrf_token %}
+                    <input type="hidden" value="4" name="id">
+                    <button class="btn btn-warning mb-2 w-100">Led amarillo</button> <br>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <form method="POST">{% csrf_token %}
+                    <input type="hidden" value="5" name="id">
+                    <button class="btn btn-dark mb-2 w-100">Apagar todos</button> <br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Custom Scripts -->
+    <script src="{% static 'js/master.js' %}"></script>
+
+</body>
+
+</html>
